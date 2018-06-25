@@ -49,6 +49,11 @@ body{
     padding-left: 4em !important;
     padding-right: 4em !important;
 }
+/*响应式*/
+.m-padded-lr-responsive{
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
 
 /*外部间隔*/
 .m-margin-tb-tiny{
@@ -66,6 +71,10 @@ body{
 .m-margin-top-large{
     margin-top: 2em !important;
     margin-bottom: 2em !important;
+}
+/*输入框间隔*/
+.m-margin-bottom-small{
+    margin-bottom: 0.5em !important;
 }
 
 
@@ -109,6 +118,11 @@ body{
     max-width: 60em !important;
     margin: auto !important;
 }
+/*导航阴影*/
+.m-shadow-small{
+    -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
 
 
 /*超链接字体颜色*/
@@ -135,5 +149,19 @@ body{
     }
     .m-mobile-show{
         display: block !important;
+    }
+    /*手机端去掉*/
+    .m-padded-lr-responsive{
+        padding-left: 0em !important;
+        padding-right: 0em !important;
+    }
+    /*在手机端充满整行*/
+    .m-mobile-wide-full{
+        width: 100% !important;
+    }
+    /*在手机端清除左右两端间距*/
+    .m-mobile-lr-cls{
+        padding-left: 0em !important;
+        padding-right: 0em !important;
     }
 }
