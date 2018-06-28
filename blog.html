@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="static/css/typo.css">
     <link rel="stylesheet" href="static/css/animate.css">
     <link rel="stylesheet" href="static/plugins/prism/1.15/prism.css">
+    <link rel="stylesheet" href="static/plugins/tocbot/tocbot.css">
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
@@ -268,10 +269,10 @@
                     You just need to follow the browser's behavior, and set a right <code>margin</code> to it。it will works nice as the
                     demo you're watching now. The following code is the best way to render typo in Chinese:
                 </p>
-                <pre>
+                <pre class="language-css"><code>
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 h1,h2,h3,h4,h5,h6 {
-line-height:1;font-family:Arial,sans-serif;margin:1.4em 0 0.8em;
+    line-height:1;font-family:Arial,sans-serif;margin:1.4em 0 0.8em;
 }
 h1{font-size:1.8em;}
 h2{font-size:1.6em;}
@@ -281,9 +282,9 @@ h5,h6{font-size:1em;}
 
 /* 现代排版：保证块/段落之间的空白隔行 */
 .typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr {
-margin:1em 0 0.6em;
+    margin:1em 0 0.6em;
 }
-                </pre>
+                </code></pre>
 
                 <h3 id="section3">三、附录</h3>
 
@@ -486,7 +487,7 @@ margin:1em 0 0.6em;
             </div>
         </div>
         <!--留言区域-->
-        <div class="ui bottom attached segment">
+        <div id="comment-container" class="ui bottom attached segment">
             <div class="ui teal segment">
                 <div class="ui comments">
                     <h3 class="ui dividing header">Comments</h3>
@@ -553,7 +554,7 @@ margin:1em 0 0.6em;
                         </div>
                     </div>
                     <!--输入留言区-->
-                    <form class="ui reply form">
+                    <div class="ui reply form">
                         <div class="field">
                             <textarea name="content" placeholder="请输入评论内容..."></textarea>
                         </div>
@@ -575,11 +576,27 @@ margin:1em 0 0.6em;
                                 <!--<div class="ui blue labeled submit icon button"><i class="icon edit"></i> Add Reply </div>-->
                             </div>
                         </div>
-
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="m-padded m-fixed m-right-bottom">
+            <div class="ui vertical icon buttons">
+                <button class="ui toc teal button">目录</button>
+                <a href="#comment-container" class="ui teal button">留言</a>
+                <button class="ui wechat icon button"> <i class="weixin icon"></i></button>
+                <a href="#" class="ui icon button"><i class="chevron up icon"></i></a>
+            </div>
+        </div>
+        <div class="ui wechat-content flowing popup transition hidden m-padded-mini" style="width: 130px">
+            <img src="static/images/wechat-qr.jpg" alt="" class="ui rounded bordered image" style="width: 120px">
+        </div>
+        <div class="ui toc-container flowing popup transition hidden" style="width: 250px !important;">
+            <ol class="js-toc"></ol>
+        </div>
+
+
     </div>
 </div>
 
@@ -623,6 +640,7 @@ margin:1em 0 0.6em;
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="static/plugins/tocbot/tocbot.min.js"></script>
 <script src="static/plugins/prism/1.15/prism.js"></script>
 <script>
     /*显示和隐藏菜单*/
@@ -633,7 +651,25 @@ margin:1em 0 0.6em;
         popup:$(".payQR.popup"),
         on:'click',
         position:'bottom center'
-    })
+    });
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.js-toc-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3',
+    });
+    $('.toc.button').popup({
+        popup : $('.toc-container.popup'),
+        on : 'click',
+        position: 'left center'
+    });
+    $(".wechat").popup({
+        popup:$(".wechat-content"),
+        on:'hover',/*default*/
+        position:'left center'
+    });
 
 </script>
 </body>

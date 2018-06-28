@@ -4,7 +4,9 @@ body{
     background: url("../images/what-the-hex.png");
 }
 
-
+.m-padded {
+    padding: 1em !important;
+}
 /*内部间隔*/
 .m-padded-tb-massive{
     padding-top: 5em !important;
@@ -129,6 +131,19 @@ body{
 .m-black{
     color: #333333 !important;
 }
+
+/*------positon-----*/
+
+.m-fixed {
+    position: fixed !important;
+    z-index: 10 !important;
+}
+
+.m-right-bottom {
+    bottom: 0 !important;
+    right: 0 !important;
+}
+
 
 /*指定位置*/
 .m-right-top{
