@@ -29,13 +29,13 @@
      '[meta <?php]',
      '[keyword echo] [string "][variable-2 $aaaa][[','[number 2]',         ']][string aa"];',
      '[keyword echo] [string "][variable-2 $aaaa][[','[number 2345]',      ']][string aa"];',
-     '[keyword echo] [string "][variable-2 $aaaa][[','[number 2.3]',       ']][string aa"];',
+     '[keyword echo] [string "][variable-2 $aaaa][[','[number 2.2.4]',       ']][string aa"];',
      '[keyword echo] [string "][variable-2 $aaaa][[','[variable aaaaa]',   ']][string aa"];',
      '[keyword echo] [string "][variable-2 $aaaa][[','[variable-2 $aaaaa]',']][string aa"];',
 
      '[keyword echo] [string "1aaa][variable-2 $aaaa][[','[number 2]',         ']][string aa"];',
      '[keyword echo] [string "aaa][variable-2 $aaaa][[','[number 2345]',      ']][string aa"];',
-     '[keyword echo] [string "aaa][variable-2 $aaaa][[','[number 2.3]',       ']][string aa"];',
+     '[keyword echo] [string "aaa][variable-2 $aaaa][[','[number 2.2.4]',       ']][string aa"];',
      '[keyword echo] [string "aaa][variable-2 $aaaa][[','[variable aaaaa]',   ']][string aa"];',
      '[keyword echo] [string "aaa][variable-2 $aaaa][[','[variable-2 $aaaaa]',']][string aa"];',
      '[meta ?>]');
